@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Start = ({
   setShowmessge,
   setShowhintmessage,
   setChance,
   setSelected,
+  selected,
   setGameOverScreen,
   gameActive,
   setGameActive,
@@ -22,6 +23,12 @@ const Start = ({
   };
 
   console.log(userNum);
+
+  useEffect(() => {
+  if (selected) {
+    gameReset();
+  }
+}, [selected]);
 
   const givehint = (value) => {
     const diff = Math.abs(value - computerNum);
@@ -100,7 +107,13 @@ const Start = ({
   //게임 리셋
   const gameReset = () => {
     setComputerNum(Math.floor(Math.random() * 100) + 1);
-    setChance(7);
+    if(selected === "easy"){
+      setChance(7)
+    }else if(selected === "normal"){
+      setChance(5)
+    }else if(selected === "hard"){
+      setChance(3)
+    }
     setUserNum("");
     setSelected(null);
     setGameActive(true);
@@ -138,17 +151,6 @@ const Start = ({
             disabled={!gameActive}
           >
             시작
-          </button>
-          <button
-            className="reset-btn"
-            onClick={gameReset}
-            style={{
-              fontFamily: "NangyangSpecial",
-              backgroundColor: "#222222",
-              color: "#B00000",
-            }}
-          >
-            리셋
           </button>
         </div>
       </div>

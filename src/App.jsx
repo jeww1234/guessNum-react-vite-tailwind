@@ -24,7 +24,7 @@ function App() {
           <div className="gameOver-img"></div>
           <img
             className="fixed  w-[100vw] h-[100vh] t-[0] l-[0"
-            src="../public/실패 화면.gif"
+            src="/실패 화면.gif"
             alt="게임 오버"
           />
         </div>
@@ -36,7 +36,7 @@ function App() {
             <h1 className="nosifer">up & down</h1>
             <h1 className="korean">Guess Number</h1>
             <img
-              src="../public/기본 화면.gif"
+              src="/기본 화면.gif"
               alt="#"
               className="m-[2vh] rounded-[25px]"
             />
@@ -65,3 +65,5 @@ function App() {
 }
 
 export default App;
+
+//guessNum-react-vite-tailwind

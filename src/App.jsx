@@ -47,6 +47,7 @@ function App() {
               setShowmessge={setShowmessge}
               setShowhintmessage={setShowhintmessage}
               setChance={setChance}
+              selected={selected}
               setSelected={setSelected}
               setGameOverScreen={setGameOverScreen}
               gameActive={gameActive}

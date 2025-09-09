@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Level = ({ setChance, setSelected, selected }) => {
   const changeChance = (num, level) => {
@@ -10,7 +10,7 @@ const Level = ({ setChance, setSelected, selected }) => {
       <button
         style={{ fontFamily: "NangyangSpecial", color:"#FF0000", backgroundColor:"#222222"}}
         className="m-[0.5vw]"
-        onClick={() => changeChance(3, "easy")}
+        onClick={() => changeChance(7, "easy")}
         disabled={selected !== null && selected !== "easy"}
       >
         쉬움
@@ -26,7 +26,7 @@ const Level = ({ setChance, setSelected, selected }) => {
       <button
         style={{ fontFamily: "NangyangSpecial", color:"#8B0000", backgroundColor:"#222222"}}
         className="m-[0.3vw]"
-        onClick={() => changeChance(7, "hard")}
+        onClick={() => changeChance(3, "hard")}
         disabled={selected !== null && selected !== "hard"}
       >
         어려움

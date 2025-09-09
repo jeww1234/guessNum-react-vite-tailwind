@@ -104,6 +104,9 @@ const Start = ({
     setUserNum("");
     setSelected(null);
     setGameActive(true);
+    setUserHistory([]);
+    setShowmessge("결과 : ");
+    setShowhintmessage("힌트 : ");
   };
 
   return (
@@ -111,11 +114,12 @@ const Start = ({
       <div className="flex justify-center mb-[1vh] items-center">
         <input
           className="input-area flex justify-center items-center"
-          style={{fontFamily:"NangyangSpecial",color:"#B00000"}}
+          style={{ fontFamily: "NangyangSpecial", color: "#B00000" }}
           type="number"
           value={userNum}
           onChange={inputNum}
           placeholder=" 숫자를 입력하세요"
+          onFocus={()=>setUserNum("")}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               gameStart();
@@ -124,7 +128,11 @@ const Start = ({
         />
         <div className="ms-[0.5vw] flex items-center">
           <button
-            style={{ fontFamily: "NangyangSpecial", backgroundColor:"#B00000", color:"#222222"}}
+            style={{
+              fontFamily: "NangyangSpecial",
+              backgroundColor: "#B00000",
+              color: "#222222",
+            }}
             className="start-btn"
             onClick={gameStart}
             disabled={!gameActive}
@@ -134,7 +142,11 @@ const Start = ({
           <button
             className="reset-btn"
             onClick={gameReset}
-            style={{ fontFamily: "NangyangSpecial", backgroundColor:"#222222", color:"#B00000"}}
+            style={{
+              fontFamily: "NangyangSpecial",
+              backgroundColor: "#222222",
+              color: "#B00000",
+            }}
           >
             리셋
           </button>
